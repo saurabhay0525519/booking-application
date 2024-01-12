@@ -18,7 +18,7 @@ export function UserContextProvider({children}){
             console.log('the line 18 after  reconciliation');
             setReady(true);
             console.log(`the line 20 ready ${ready}`);
-            console.log('context user in useffect',user);
+            // console.log('context user in useffect',user);
         }
     },[]);
     console.log('run before return');
