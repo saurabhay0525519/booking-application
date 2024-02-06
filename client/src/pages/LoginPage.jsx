@@ -43,13 +43,13 @@ export default function LoginPage(){
                     value={email}
                     onChange={ev => setEmail(ev.target.value)}
                     placeholder="your@email.com" 
-                 />
+                />
                 <input className="border border-blue-300 p-2 rounded-full my-2 "
                      type="password"
                      value={password}
                      onChange={ev => setPassword(ev.target.value)}
                      placeholder="password"
-                     />
+                />
                 <button  className="primary rounded-full p-2 my-2">Login</button>
                 <div className="text-center py-2 text-gray-500">
                     Don't have an account yet? <Link className="underline text-black" to={'/register'}>register</Link>

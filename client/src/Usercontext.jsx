@@ -6,27 +6,29 @@ export const UserContext = createContext({});
 export function UserContextProvider({children}){
     const[user,setUser] = useState(null);//useState hook
     const[ready,setReady] = useState(false);
-    console.log(`the line 9 user ${user}`);
-    console.log(`the line 10 ready ${ready}`);
+    // console.log(`the line 9 user ${user}`);
+    // console.log(`the line 10 ready ${ready}`);
     useEffect(() => {
         if(!user){
             const {data} = axios.get('/profile');
             // console.log(data); both will give same output
             // console.log({data});
             setUser(data);
-            console.log(`the line 17 user ${user}`);
-            console.log('the line 18 after  reconciliation');
+            // console.log(`the line 17 user ${user}`);
+            // console.log('the line 18 after  reconciliation');
+            // console.log(`the line 19 ready ${ready}`);
             setReady(true);
-            console.log(`the line 20 ready ${ready}`);
+            // console.log(`the line 20 ready ${ready}`);
             // console.log('context user in useffect',user);
         }
     },[]);
-    console.log('run before return');
+    // console.log('run before return');
     return(
+        
         <UserContext.Provider value={{user,setUser,ready}} >
             {children}
         </UserContext.Provider>
     );
-    //below line of code not run because return() runs as last, after this no line of code run
+    //code written below line31 will not run because return() runs as last, after this no line of code runs
     //console.log('run after return');
 };

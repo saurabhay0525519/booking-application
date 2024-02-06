@@ -10,7 +10,7 @@ require('dotenv').config()
 
 
 const bcryptSalt = bcrypt.genSaltSync(10);//10 is the cost
-//creating secret key
+//creating secret or private key
 const jwtSecret = 'dsfjei3430493fejrij';
 
 app.use(cookieParser());
@@ -58,7 +58,7 @@ app.post('/register',async (req,res) => {
 
 //define route(way) for handling POST request
 app.post('/login', async (req, res) => {
-    // console.log('server');
+    // console.log('hello server');
     const { email, password } = req.body;
     // console.log(req);
     //finding document from database of this <email> and storing in userDoc 
@@ -108,6 +108,10 @@ app.post('/login', async (req, res) => {
     }else {
       res.json(null);
     }
+  });
+
+  app.post('/logout',(req,res) =>{
+      res.json('null');
   });
   
 
